@@ -1,0 +1,19 @@
+{
+  "name": "atata",
+  "version": "0.0.0",
+  "authors": [
+    "asubota <asubota@cogniance.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "semantic-ui": "~1.10.0"
+  }
+}
