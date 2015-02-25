@@ -6,6 +6,39 @@
   <!-- endinject -->
 </head>
 <body>
+
+  <div class="wrap">
+
+    <div class="ui grid">
+      <div class="row centered">
+        <div class="two wide column">
+          <div class="ui segment">
+            <div class="ui list chat-members"></div>
+          </div>
+        </div>
+        <div class="six wide column">
+          <div class="ui list chat-messages"></div>
+
+          <div class="ui clearing divider"></div>
+          <div class="ui form">
+
+            <div class="fields">
+              <div class="twelve wide field">
+                <input type="text" placeholder="Your message..." class="chat-input">
+              </div>
+              <div class="four wide field">
+                <input type="text" placeholder="Your nickname..." class="chat-currentName">
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <script src="/socket.io/socket.io.js"></script>
   <!-- inject:js -->
   <!-- endinject -->

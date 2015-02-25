@@ -1,8 +1,20 @@
 body {
-  background-color: #ccc;
 
-  .wrap {
-    color: #fff;
-    color: red;
-  }
+}
+
+.wrap {
+  margin-top: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.chat-input-wrap {
+
+}
+
+.chat-members {
+  color: green;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
