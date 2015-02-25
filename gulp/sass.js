@@ -6,9 +6,10 @@ var $    = require('gulp-load-plugins')({
 });
 
 gulp.task('sass', function() {
-  return gulp.src(gulp.paths.src + '/**/*.scss')
-    .pipe($.concat('app.css'))
+  return gulp.src(gulp.paths.src + '/styles/*.scss')
+    .pipe($.autoprefixer())
     .pipe($.rename({suffix: '.min'}))
     .pipe($.sass({style: 'compressed'}))
+    .pipe($.concat('app.css'))
     .pipe(gulp.dest(gulp.paths.dist + '/css'));
 });

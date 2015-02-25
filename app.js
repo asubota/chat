@@ -11,8 +11,8 @@ var getName = function() {
   return ['User', Math.floor((Math.random() * 100) + 1)].join('-');
 };
 
-// redis.flushdb();
 
+// redis.flushdb();
 io.on('connection', function(client) {
 
 
