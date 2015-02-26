@@ -1,3 +1,5 @@
+'use strict';
+
 var socket = io.connect('http://10.1.30.222:3010/');
 
 var userName = (function() {
@@ -17,7 +19,7 @@ $(function() {
   $input.on('keyup', function(event) {
     var message = $input.val();
 
-    if(event.keyCode == 13 && message) {
+    if(event.keyCode === 13 && message) {
       socket.emit('send:message', {message: message});
       $input.val('');
     }
@@ -26,7 +28,7 @@ $(function() {
   $currentName.on('keyup', function(event) {
     var name = $currentName.val();
 
-    if(event.keyCode == 13 && name) {
+    if(event.keyCode === 13 && name) {
       socket.emit('change:name', {name: name});
       userName.set(name);
     }

@@ -13,9 +13,6 @@ var scripts = gulp.src([
   gulp.paths.dist + '/js/*.js',
   '!' + gulp.paths.dist + '/js/vendors/*.js'], {read: false});
 
-console.log(scripts.toString());
-
-
 var cssVendors = gulp.src([gulp.paths.dist + '/css/vendors/*.css'], {read: false});
 var jsVendors  = gulp.src([gulp.paths.dist + '/js/vendors/*.js'], {read: false});
 
@@ -24,7 +21,7 @@ var injectOptions = {
   ignorePath: 'public'
 };
 
-gulp.task('inject', function() {
+gulp.task('inject', ['vendors-css', 'vendors-js', 'sass', 'scripts'], function() {
   return gulp.src(gulp.paths.src + '/index.html')
     .pipe($.inject($.streamSeries(cssVendors, styles),  injectOptions))
     .pipe($.inject($.streamSeries(jsVendors, scripts),  injectOptions))

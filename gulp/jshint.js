@@ -5,10 +5,8 @@ var $    = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
 
-var series = require('stream-series');
-
-gulp.task('clean', function(done) {
-  $.del('public/', done);
+gulp.task('jshint', function() {
+  return gulp.src(gulp.paths.src + '/js/*.js')
+    .pipe($.jshint('.jshintrc'))
+    .pipe($.jshint.reporter('jshint-stylish-ex'));
 });
-
-gulp.task('build', ['inject', 'jshint']);
