@@ -23,6 +23,7 @@
     "gulp-filter": "^2.0.2",
     "gulp-inject": "^1.2.0",
     "gulp-jshint": "^1.9.2",
+    "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-rename": "^1.2.0",
     "gulp-replace": "^0.5.3",

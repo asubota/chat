@@ -1,26 +1,17 @@
 'use strict';
 
 var gulp = require('gulp');
+var $    = require('gulp-load-plugins')({
+  pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del', 'stream-series']
+});
 
-// gulp.task('watch', function() {
-  // Watch .coffee files
-  // gulp.watch(gulp.paths.src + '/coffee/*.coffee', ['build']);
+gulp.task('watch', function() {
+  $.livereload.listen();
 
-  // Watch .js files
-  // gulp.watch(gulp.paths.src + '/js/*.js', ['build']);
-
-  // Watch .scss files
-  // gulp.watch(gulp.paths.src + '/styles/*.scss', ['build']);
-
-  // Watch .html files
-  // gulp.watch(gulp.paths.src + '/index.html', ['build']);
-// });
-
-gulp.task('watch', ['inject'], function () {
   gulp.watch([
     gulp.paths.src + '/coffee/*.coffee',
     gulp.paths.src + '/js/*.js',
     gulp.paths.src + '/styles/*.scss',
     gulp.paths.src + '/index.html'
-  ], ['inject', 'jshint']);
+  ], ['build']);
 });
