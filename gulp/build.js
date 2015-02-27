@@ -5,7 +5,7 @@ var $    = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del', 'stream-series']
 });
 
-gulp.task('build', ['vendors-css', 'vendors-js', 'js', 'sass'], function() {
+gulp.task('build', ['vendors-css', 'vendors-js', 'vendors-fonts', 'js', 'sass'], function() {
   var styles  = gulp.src([
     gulp.paths.dist + '/css/*.css',
     '!' + gulp.paths.dist + '/css/vendors/*.css'], {read: false});
