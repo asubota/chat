@@ -6,9 +6,7 @@ var $    = require('gulp-load-plugins')({
 });
 
 gulp.task('watch', function() {
-  $.livereload.listen();
-
-  gulp.watch([
+  return gulp.watch([
     gulp.paths.src + '/coffee/*.coffee',
     gulp.paths.src + '/js/*.js',
     gulp.paths.src + '/styles/*.scss',

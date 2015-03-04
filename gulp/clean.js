@@ -6,5 +6,5 @@ var $    = require('gulp-load-plugins')({
 });
 
 gulp.task('clean', function(done) {
-  $.del('public/', done);
+  return $.del('public/', done);
 });

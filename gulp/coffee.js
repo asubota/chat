@@ -6,7 +6,7 @@ var $    = require('gulp-load-plugins')({
 });
 
 gulp.task('coffee', function() {
-  gulp.src(gulp.paths.src + '/coffee/*.coffee')
+  return gulp.src(gulp.paths.src + '/coffee/*.coffee')
     .pipe($.coffee({bare: true}).on('error', $.util.log))
     .pipe(gulp.dest(gulp.paths.src + '/js'));
 });

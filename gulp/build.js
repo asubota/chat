@@ -5,7 +5,7 @@ var $    = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del', 'stream-series']
 });
 
-gulp.task('build', ['vendors-css', 'vendors-js', 'vendors-fonts', 'js', 'sass'], function() {
+gulp.task('build', ['vendors', 'js', 'sass'], function() {
   var styles  = gulp.src([
     gulp.paths.dist + '/css/*.css',
     '!' + gulp.paths.dist + '/css/vendors/*.css'], {read: false});
@@ -19,12 +19,12 @@ gulp.task('build', ['vendors-css', 'vendors-js', 'vendors-fonts', 'js', 'sass'],
 
   var injectOptions = {
     addRootSlash: false,
-    ignorePath: 'public'
+    ignorePath: gulp.paths.dist
   };
 
   return gulp.src(gulp.paths.src + '/index.html')
     .pipe($.inject($.streamSeries(cssVendors, styles),  injectOptions))
     .pipe($.inject($.streamSeries(jsVendors, scripts),  injectOptions))
 
-    .pipe(gulp.dest('./public'));
+    .pipe(gulp.dest(gulp.paths.dist));
 });

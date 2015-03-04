@@ -8,7 +8,7 @@ var $    = require('gulp-load-plugins')({
 gulp.task('js', ['coffee', 'jshint'], function() {
   return gulp.src(gulp.paths.src + '/js/*.js')
     .pipe($.concat('app.js'))
-    .pipe($.rename({suffix: '.min'}))
+    // .pipe($.rename({suffix: '.min'}))
     // .pipe($.uglify())
     .pipe(gulp.dest(gulp.paths.dist + '/js'));
 });

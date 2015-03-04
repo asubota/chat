@@ -5,18 +5,24 @@ var $    = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
 
+gulp.task('vendors', ['vendors-fonts', 'vendors-css', 'vendors-js']);
+
 gulp.task('vendors-css', function() {
-  gulp.src($.mainBowerFiles())
+  return gulp.src($.mainBowerFiles())
     .pipe($.filter('*.css'))
     .pipe($.replace('themes/default/assets/fonts', '../../fonts'))
     .pipe($.concat('vendors.css'))
+    .pipe($.minifyCss())
+    .pipe($.rename({suffix: '.min'}))
     .pipe(gulp.dest(gulp.paths.dist + '/css/vendors/'));
 });
 
 gulp.task('vendors-js', function() {
-  gulp.src($.mainBowerFiles())
+  return gulp.src($.mainBowerFiles())
     .pipe($.filter('*.js'))
     .pipe($.concat('vendors.js'))
+    .pipe($.rename({suffix: '.min'}))
+    .pipe($.uglify())
     .pipe(gulp.dest(gulp.paths.dist + '/js/vendors/'));
 });
 
